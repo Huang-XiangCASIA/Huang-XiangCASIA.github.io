@@ -439,20 +439,24 @@ I'm always looking for related collaboration. If you are interested to chat with
   </div>
 </div>
 
-<h1 class="md-heading text-left">
-  <i class="fa fa-picture-o" aria-hidden="true"></i>
-  Photo Gallery
-</h1>
+<!-- Photo gallery: put this INSIDE the same .wrapper you use elsewhere -->
+<div class="wrapper">
+  <h1 class="md-heading text-left">
+    <i class="fa fa-picture-o" aria-hidden="true"></i>
+    Photo Gallery
+  </h1>
 
-<div class="photo-grid">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
-  <img src="images/p1.jpg" alt="">
+  <div class="photo-grid">
+    <!-- 请确保 images/ 下有这些文件，文件名大小写要精确 -->
+    <img class="gallery-img" src="images/p1.jpg" alt="p1" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p2" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p3" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p4" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p5" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p6" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p7" onerror="this.onerror=null;this.src='images/placeholder.png'">
+    <img class="gallery-img" src="images/p1.jpg" alt="p8" onerror="this.onerror=null;this.src='images/placeholder.png'">
+  </div>
 </div>
 
 <style>
@@ -493,26 +497,34 @@ I'm always looking for related collaboration. If you are interested to chat with
 </style>
 
 <style>
-.photo-grid {
+/* 让 photo-grid 跟你网站其他内容一样宽（使用 .wrapper 的宽度约束） */
+.wrapper .photo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin: 20px 0;
+  box-sizing: border-box;
 }
 
-.photo-grid img {
+/* 图片样式，和你 site 的 .intro-img/.frame 风格接近 */
+.gallery-img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid #ddd;
+  display: block;
 }
 
+/* 移动端两列 */
 @media (max-width: 768px) {
-  .photo-grid {
+  .wrapper .photo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* 如果你想和 publications 区域完全一致（使用同样圆角/阴影），
+   把 img 的 class 改成与 publications 相同： class="intro-img frame gallery-img" */
 </style>
 
 <footer class="site-footer">
