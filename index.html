@@ -439,6 +439,22 @@ I'm always looking for related collaboration. If you are interested to chat with
   </div>
 </div>
 
+<h1 class="md-heading text-left">
+  <i class="fa fa-picture-o" aria-hidden="true"></i>
+  Photo Gallery
+</h1>
+
+<div class="photo-grid">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+  <img src="images/p1.jpg" alt="">
+</div>
+
 <style>
   .reviewer-section {
     display: flex;
@@ -476,6 +492,28 @@ I'm always looking for related collaboration. If you are interested to chat with
   }
 </style>
 
+<style>
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
 
 <footer class="site-footer">
   <div class="wrapper">
